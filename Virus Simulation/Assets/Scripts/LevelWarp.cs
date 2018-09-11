@@ -7,6 +7,7 @@ public class LevelWarp : MonoBehaviour {
 	// Use this for initialization
 	public Virus_Movement suction;
 	public Camera_Movement tracker;
+	public Animator fading;
 	void Start () {
 		
 	}
@@ -21,6 +22,7 @@ public class LevelWarp : MonoBehaviour {
 		if (other.name == "virus2") {
 			suction.propulsion = 50000f;
 			tracker.IsWarping = true;
+			fading.SetTrigger ("FadeOut");
 		}
 	}
 
