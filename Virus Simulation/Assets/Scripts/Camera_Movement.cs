@@ -9,7 +9,7 @@ public class Camera_Movement : MonoBehaviour {
     public float distanceDamp = 4f;
     public float rotationDamp = 8f;
     private Transform myT;
-
+	public bool IsWarping = false;
 	// Use this for initialization
 	void Start () {
         myT = transform;
@@ -21,16 +21,18 @@ public class Camera_Movement : MonoBehaviour {
 		
 	}
 
-    private void LateUpdate()
+	public void LateUpdate()
     {
-        Vector3 toPosition = target.transform.position + (target.transform.rotation * cameraDistance);
-        Vector3 currentPosition = Vector3.Lerp(myT.position, toPosition, distanceDamp * Time.deltaTime);
-        myT.position = currentPosition;
+		if (IsWarping == false) {
+			Vector3 toPosition = target.transform.position + (target.transform.rotation * cameraDistance);
+			Vector3 currentPosition = Vector3.Lerp (myT.position, toPosition, distanceDamp * Time.deltaTime);
+			myT.position = currentPosition;
 
-        Quaternion toRotation = Quaternion.LookRotation(target.transform.position - myT.position,
-            target.transform.up);
-        Quaternion currentRotation = Quaternion.Slerp(myT.rotation, toRotation, rotationDamp * Time.deltaTime);
-        myT.rotation = currentRotation;
+			Quaternion toRotation = Quaternion.LookRotation (target.transform.position - myT.position,
+				                              target.transform.up);
+			Quaternion currentRotation = Quaternion.Slerp (myT.rotation, toRotation, rotationDamp * Time.deltaTime);
+			myT.rotation = currentRotation;
+		}
     }
 
 }
