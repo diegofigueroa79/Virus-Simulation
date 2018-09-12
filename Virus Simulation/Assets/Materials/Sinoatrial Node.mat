@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Tricuspid
+  m_Name: Sinoatrial Node
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.990566, g: 0.9025324, b: 0.4719206, a: 1}
-    - _EmissionColor: {r: 0.8773585, g: 0.82564974, b: 0.38487893, a: 1}
+    - _Color: {r: 0.9056604, g: 0.69064903, b: 0.11534355, a: 1}
+    - _EmissionColor: {r: 0.89073944, g: 0.7834776, b: 0.5129913, a: 1}
